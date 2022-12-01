@@ -4,7 +4,16 @@ import Header from './components/Header';
 
 function App() {
   return (
-    <Header/>
+    <BrowserRouter>
+      <Header/>
+      <Routes>
+        <Route></Route>
+        <Route></Route>
+        <Route></Route>
+      </Routes>
+    
+    </BrowserRouter>
+    
      
   );
 }
