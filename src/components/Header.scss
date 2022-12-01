@@ -1,0 +1,10 @@
+@use '../styles/partials/colors' as *;
+.header{
+    background: $black;
+    // height: 20rem;
+    &-logo{
+        height: 4rem;
+        display:block;
+        margin: auto;
+    }
+}
