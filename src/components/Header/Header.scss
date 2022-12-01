@@ -1,0 +1,28 @@
+@use '../../styles//partials/colors' as *;
+.header{
+    background: $off-black;
+    &-container{
+        display:flex;
+        justify-content: space-around;
+        padding: 1rem;
+        gap: 1rem;
+    }
+    &-container__logo{
+        height: 4rem;
+        display:block;
+    }
+    &-container__nav-item{
+        color: $white;
+        text-decoration: none;
+        width: 10.1875rem;
+        background-color: $black;
+        border-radius: 20px;
+        padding: 0.5rem 0 0.5rem 0;
+        text-align: center;
+        vertical-align: centre;
+    }
+    // &-container__nav-item:hover{
+    //     background-color: $white;
+    // }
+
+}
