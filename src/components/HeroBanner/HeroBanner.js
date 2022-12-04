@@ -1,10 +1,10 @@
-import BannerImage from '../../asset/images/'
+import './HeroBanner.scss';
+import BannerImage from '../../asset/images/banner.png'
+
 function HeroBanner(){
     return(
-        <div >
-            <div className=''>
-                <img src={BannerImage} alt="banner image" />
-            </div>
+        <div className='website-banner' >
+            <img src={BannerImage} alt="website banner" className='website-banner__image' />
         </div>
     )
 }

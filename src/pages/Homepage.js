@@ -1,6 +1,9 @@
+import HeroBanner from "../components/HeroBanner/HeroBanner";
 function Homepage(){
     return(
-        <></>
+        <>
+            <HeroBanner/>
+        </>
         
     )
 }
