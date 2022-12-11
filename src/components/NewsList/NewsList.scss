@@ -1,0 +1,9 @@
+@use '../../styles/partials/mixins.scss' as *;
+.news-header{
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    @include tablet{
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+}

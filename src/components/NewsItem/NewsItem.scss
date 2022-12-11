@@ -1,3 +1,4 @@
+@use '../../styles/partials/mixins.scss' as *;
 .news-item{
     display:flex;
     margin: 1rem;
@@ -15,7 +16,23 @@
             margin-top: 0;
         }
     }
-
+    &__text-title{
+        font-size: 1.25rem;
+        line-height: 1.625rem;
+        @include setMargin (0,0,0,0);
+        @include tablet {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+    }
+    &__text-paragraph{
+        font-size: .9375rem;
+        line-height: 1.625rem;
+        @include setMargin (0.5rem,0,0.5rem,0);
+        @include tablet {
+           
+        }
+    }
 }
 .news-header{
     margin: 1rem 1rem 0 1rem;
