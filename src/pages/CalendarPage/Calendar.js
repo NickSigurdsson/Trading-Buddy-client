@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 import CalendarComponent from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import axios from 'axios';
+import '../CalendarPage/Calendar.scss'
 function CalendarPage(){ 
     //  new date = date object with the current date and time (makes sure that the state has the current date value)
     const [value, setValue] = useState(new Date());

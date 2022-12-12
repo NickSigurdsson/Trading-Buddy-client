@@ -1,0 +1,59 @@
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/colors' as *;
+body{
+    background-color:#28282B;
+}
+.watchlist{
+    // @include setMargin(1rem,1rem,1rem,1rem);
+    @include setPadding(1rem,1rem,1rem,1rem);
+    margin:auto;
+    margin-top: 1rem;
+    border-radius: 5px;
+    color:$off-white;
+    background: $off-black;
+    width: 80%;
+    
+    &-header{
+        display:flex;
+        justify-content: space-between;
+        &__heading{
+            @include setMargin(0,0,0,0);
+        }
+        &__button{
+            // border: 1px solid black;
+            background-color: $off-black;
+            border-radius: 20px;
+            color:$white;
+            @include setPadding(0,0.5rem,0,0.5rem);
+        }
+    }
+    &-column-titles{
+        display:flex;
+        justify-content: space-between;
+        @include setPadding(0,0,0,0);
+        @include setMargin(1rem,0,1rem,0);
+    }
+    &-column-titles__header{
+        list-style-type: none;
+    }
+    &-item{
+        display:flex;
+        justify-content: space-between;
+        @include setPadding(0,0,0,0);
+        @include setMargin(1rem,0,1rem,0);
+        &__data{
+            list-style-type: none;
+            &-price{
+                list-style-type: none;
+                color:#007f00;
+                display: inline-block;
+                border-radius: 20px;
+                // @include setPadding(0,0.5rem,0,0.5rem);
+                // background-color: #07843b;
+            }
+        }
+    }
+    
+
+        
+}

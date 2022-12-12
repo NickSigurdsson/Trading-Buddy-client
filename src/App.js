@@ -1,9 +1,9 @@
 import './App.scss';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Header from './components/Header/Header';
-import Homepage from './pages/Homepage';
-import CalendarPage from './pages/Calendar';
-import Dashboard from './pages/Dashboard';
+import Homepage from './pages/HomePage/Homepage';
+import CalendarPage from './pages/CalendarPage/Calendar';
+import Dashboard from './pages/Dashboard/Dashboard';
 
 function App() {
   return (
