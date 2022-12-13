@@ -22,12 +22,15 @@
         color: $white;
         text-decoration: none;
         width: 10.1875rem;
-        background-color: $black;
+        background-color: #28282B;
         border-radius: 20px;
         padding: 0.5rem 0 0.5rem 0;
         text-align: center;
         vertical-align: centre;
         font-size: .8125rem;
+        &:hover{
+            background-color: black;
+        } 
     }
 }
 .nav{

@@ -4,7 +4,7 @@ function NewsItem({key,title,description,image,url}){
         <>
             <section>
                 <div className='news-item'>
-                    <img src={image} alt="headline image" className='news-item__image'/>
+                    <img src={image} alt="headline graphics" className='news-item__image'/>
                     <div className='news-item__text'>
                         <h3 className='news-item__text-title'>{title}</h3>
                         <p className='news-item__text-paragraph'>{description}</p>

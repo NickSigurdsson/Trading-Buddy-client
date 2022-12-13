@@ -1,4 +1,6 @@
 import './Portfolio.scss';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 function Portfolio(){
     return(
         <section className="portfolio">
@@ -11,6 +13,7 @@ function Portfolio(){
                 <li className="portfolio-column-titles__header">Price</li>
                 <li className="portfolio-column-titles__header">% Change</li>
             </ul>
+            {/* This ul will take the data  */}
             <ul className="portfolio-item">
                 <li className="portfolio-item__data">AAPL</li>
                 <li className="portfolio-item__data">148.56</li>

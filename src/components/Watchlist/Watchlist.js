@@ -16,7 +16,6 @@ function Watchlist(){
                 <li className="watchlist-item__data">148.56</li>
                 <li className="watchlist-item__data-price">5.1%</li>
             </ul>
-
         </section>
     )
 }

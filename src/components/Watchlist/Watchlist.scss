@@ -1,10 +1,6 @@
 @use '../../styles/partials/mixins.scss' as *;
 @use '../../styles/partials/colors' as *;
-body{
-    background-color:#28282B;
-}
 .watchlist{
-    // @include setMargin(1rem,1rem,1rem,1rem);
     @include setPadding(1rem,1rem,1rem,1rem);
     margin:auto;
     margin-top: 1rem;
@@ -12,6 +8,9 @@ body{
     color:$off-white;
     background: $off-black;
     width: 80%;
+    @include tablet{
+        margin-top: 0;
+    }
     
     &-header{
         display:flex;

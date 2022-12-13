@@ -1,0 +1,9 @@
+@use '../../styles//partials/mixins.scss' as *;
+.dashboard-lists{
+    @include tablet{
+        display:flex;
+        @include setMargin(1rem,1rem,1rem,1rem);
+        gap: 1rem;
+        
+    }
+}
