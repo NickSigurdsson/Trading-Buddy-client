@@ -1,9 +1,16 @@
 @use '../../styles//partials/mixins.scss' as *;
-.dashboard-lists{
+.dashboard-container{
     @include tablet{
         display:flex;
-        @include setMargin(1rem,1rem,1rem,1rem);
+        @include setMargin(0,1rem,1rem,1rem);
         gap: 1rem;
-        
     }
 }
+.dashboard-overall{
+    background-color: #28282B;
+    height: 100vh;
+    @include setPadding(1rem,0,0,0);
+}
+// .dashboard-chart-position{
+//     margin:auto;
+// }

@@ -1,8 +1,8 @@
 @use '../../styles/partials/mixins.scss' as *;
 @use '../../styles/partials/colors' as *;
-body{
-    background-color:#28282B;
-}
+// body{
+//     background-color:#28282B;
+// }
 .portfolio{
     @include setPadding(1rem,1rem,1rem,1rem);
     margin:auto;
@@ -47,7 +47,7 @@ body{
             list-style-type: none;
             &-price{
                 list-style-type: none;
-                color:#007f00;
+                color:$green;
                 display: inline-block;
                 border-radius: 20px;
                 // @include setPadding(0,0.5rem,0,0.5rem);

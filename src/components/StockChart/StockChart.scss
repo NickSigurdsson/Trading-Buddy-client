@@ -1,0 +1,13 @@
+@use '../../styles/partials/colors' as *;
+.chart{
+    &-header{
+        color:$white;
+    }
+    // &-container{
+    //     margin: 0.5rem;
+    // } 
+    &-style{
+        border: 1px solid grey;
+        border-radius: 3px;
+    }
+}

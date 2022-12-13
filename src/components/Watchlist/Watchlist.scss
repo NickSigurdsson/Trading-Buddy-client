@@ -44,7 +44,7 @@
             list-style-type: none;
             &-price{
                 list-style-type: none;
-                color:#007f00;
+                color:$green;
                 display: inline-block;
                 border-radius: 20px;
                 // @include setPadding(0,0.5rem,0,0.5rem);
