@@ -9,7 +9,7 @@ function StockChart() {
   const [yValue, setYValue] = useState([]);
 
   const API_KEY='3NSM9679F4Z9LTNT';
-  const TICKER='MMAT';
+  const TICKER='TSLA';
 
   useEffect(()=>{
     axios.get(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${TICKER}&outputsize=compact&apikey=${API_KEY}`)
@@ -35,7 +35,6 @@ function StockChart() {
 
     return (
       <div className='chart-container'>
-        {/* <h1 className='chart-header'>{TICKER}</h1> */}
         <Plot
           data={[
             {
@@ -47,7 +46,7 @@ function StockChart() {
             }
           ]}
           layout={{width: 720, height: 440, title: TICKER}}
-          className='chart-style'
+          config = {{responsive:true}}
         />
       </div>
     )

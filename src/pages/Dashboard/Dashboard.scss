@@ -8,9 +8,16 @@
 }
 .dashboard-overall{
     background-color: #28282B;
-    height: 100vh;
-    @include setPadding(1rem,0,0,0);
+    // height: 100vh;
+    @include setPadding(1rem,0,1rem,0);
 }
-// .dashboard-chart-position{
-//     margin:auto;
+.dashboard-chart-position{
+    @include setMargin(1rem,0,0,0);
+    display: flex;
+    justify-content: center;
+    // border: .0625rem solid black;
+}
+// .chart-property{
+//     width: 80%;
+//     border: .0625rem solid black;
 // }

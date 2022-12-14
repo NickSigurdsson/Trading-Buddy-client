@@ -1,7 +1,12 @@
 import './Portfolio.scss';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+// import axios from 'axios';
+// import { useEffect, useState } from 'react';
 function Portfolio(){
+    // const [portfolioData, setPortfolioData] = useState([]);
+    // use this use effect to grab the data of the knex database along with the axios information its getting from the API (to make a full array to send here and later mapped to make portfolio items)
+    // useEffect(()=>{
+
+    // })
 
     return(
         <section className="portfolio">

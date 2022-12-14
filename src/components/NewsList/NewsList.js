@@ -2,10 +2,10 @@ import './NewsList.scss';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import NewsItem from '../NewsItem/NewsItem';
-function NewsList(){
+function NewsList({urlModifier}){
     const [newsData, setNewsData] = useState([]);
     useEffect(()=>{
-        axios.get('http://localhost:8080/')
+        axios.get(`http://localhost:8080/${urlModifier}`)
         .then(response=>{
             setNewsData(response.data);
             console.log(response.data);
