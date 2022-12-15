@@ -1,12 +1,20 @@
 import './Portfolio.scss';
-// import axios from 'axios';
-// import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import PortfolioItem from '../PortfolioItem/PortfolioItem'
 function Portfolio(){
-    // const [portfolioData, setPortfolioData] = useState([]);
-    // use this use effect to grab the data of the knex database along with the axios information its getting from the API (to make a full array to send here and later mapped to make portfolio items)
-    // useEffect(()=>{
 
-    // })
+    const [portfolioData, setPortfolioData] = useState([]);
+
+    useEffect(()=>{
+        axios.get('http://localhost:8080/dashboard/portfolio')
+        .then(response=>{
+            setPortfolioData(response.data);
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    },[])
 
     return(
         <section className="portfolio">
@@ -19,11 +27,17 @@ function Portfolio(){
                 <li className="portfolio-column-titles__header">Price</li>
                 <li className="portfolio-column-titles__header">% Change</li>
             </ul>
-            <ul className="portfolio-item">
-                <li className="portfolio-item__data">AAPL</li>
-                <li className="portfolio-item__data">148.56</li>
-                <li className="portfolio-item__data-price">5.1%</li>
-            </ul>
+            {portfolioData.map((article)=>{
+                const {id,ticker,price} = article;
+                return(
+                    <PortfolioItem
+                    key={id}
+                    id={id}
+                    ticker={ticker}
+                    price={price}
+                    />
+                )
+            })}
         </section>
     )
 }

@@ -22,7 +22,7 @@ function StockChart() {
         // filtering for x values
         for (var key in data['Time Series (Daily)']) {
             XValueArray.push(key);
-            YValueArray.push(data['Time Series (Daily)'][key]['1. open']);
+            YValueArray.push(data['Time Series (Daily)'][key]['4. close']);
         }
         setXValue(XValueArray);
         setYValue(YValueArray);

@@ -1,8 +1,6 @@
 @use '../../styles/partials/mixins.scss' as *;
 @use '../../styles/partials/colors' as *;
-// body{
-//     background-color:#28282B;
-// }
+
 .portfolio{
     @include setPadding(1rem,1rem,1rem,1rem);
     margin:auto;
@@ -22,8 +20,8 @@
             @include setMargin(0,0,0,0);
         }
         &__button{
-            // border: 1px solid black;
             background-color: $off-black;
+            border-style:none;
             border-radius: 20px;
             color:$white;
             @include setPadding(0,0.5rem,0,0.5rem);
