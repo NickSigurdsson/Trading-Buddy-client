@@ -1,70 +1,85 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Trading Buddy (Client)
 
-## Available Scripts
+Trading buddy is beginner friendly stock monitoring and analysis web application whose goal is to provide adequate stock analysis 
+tools through a clutter-free UI.
 
-In the project directory, you can run:
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Auto-updating news list
+- Built-in economic calendar
+- User-Customizable watchlist and portfolio list
+- Auto-updating stock quotes
+- Customizable news list
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Tech Stack
+Front-end: React.js , Sass
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Backend: Express, node.js, MySQL
+## Run Locally
 
-### `npm run build`
+Clone the project
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+  git clone https://github.com/NickSigurdsson/Trading-Buddy-client.git
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Go to the project directory
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+  cd trading-buddy-client
+```
 
-### `npm run eject`
+Install dependencies
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+  npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Start the server
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+  npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## IMPORTANT
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This Repository is ONE of TWO parts of the project, you must run both the client and the server code locally in order to run this project!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The link for the server repository is : https://github.com/NickSigurdsson/Trading-Buddy-api
+## Environment Variables
 
-### Code Splitting
+To run this project, you will need to add the following environment variables to your .env file
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+`PORT`
 
-### Analyzing the Bundle Size
+`API_KEY_ALPHA_ADV`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+`API_MARKETAUX`
 
-### Making a Progressive Web App
+`API_EODHISTORICALDATA`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+`DB_LOCAL_DBNAME`
 
-### Advanced Configuration
+`DB_LOCAL_USER`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+`DB_LOCAL_PASSWORD`
+## API Requirements
 
-### Deployment
+You will need to obtain API KEYS from several different API providers as listed below: 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+https://www.alphavantage.co/
 
-### `npm run build` fails to minify
+https://www.marketaux.com/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+https://eodhistoricaldata.com/
+## Key Learnings
+
+- Preprocessing API data prior to usage 
+- Efficiently traversing through complex objects obtained through API calls
+- Using Plotly.js for data visualization
+- Utilizing multiple APIs and Libraries to obtain various functionalities
+- To always set a realistic goal when provided with a time constraint on a project
