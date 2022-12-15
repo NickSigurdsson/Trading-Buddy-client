@@ -1,49 +1,45 @@
 import "./FilterBar.scss";
 // import data from "../../data/dog-data.json";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import { v4 as uuidv4 } from "uuid";
-import AlertsArticle from "../AlertsArticle/AlertsArticle";
+// import { v4 as uuidv4 } from "uuid";
+// import AlertsArticle from "../AlertsArticle/AlertsArticle";
 import { useNavigate } from "react-router-dom";
 function FilterBar() {
     const navigate = useNavigate();
     const [searchValue, setSearchValue] = useState("");
+    // this state contains the data we take in from the API
+    const [searchData, setSearchData] = useState([]);
+    
+    // this use effect will be triggered everytime searchvalue (what is entered in the input box is changed)
+    useEffect(() => {
+        axios.get('http://localhost:8080/dashboard/search')
+        .then(response => {
+            setSearchData(response)
+        })
+        .catch(error => {
+          console.log(error)
+        })
+      }, [searchValue])
+
     const searchLogic = (event) => {
         setSearchValue(event.target.value);
     };
     const onSearch = (searchTerm) => setSearchValue(searchTerm);
-    // use an axios call to grab data instead. maybe use a use effect to grab data from the api everytime the component is mounted. 
-    const articleData = data
+    const articleData = searchData
         .filter((item) => {
-            const searchTerm = searchValue.toLowerCase();
-            const title = item.Title.toLowerCase();
+            const searchTerm = searchValue.toUpperCase();
+            const item = ticker["1. symbol"];
             return (
                 searchTerm &&
-                title.startsWith(searchTerm) &&
-                title !== searchTerm
+                item.startsWith(searchTerm) &&
+                item !== searchTerm
             );
         })
         .slice(0, 10);
-    // searchTerm is whatever that search value is (that is being typed into the search box)
-    const onSubmit = (event) => {
-        event.preventDefault();
-        const alertData = {
-            id: uuidv4(),
-            Name: searchValue,
-            how_often: event.target.frequencydropdown.value,
-            sources: event.target.sources.value,
-            language: event.target.language.value,
-            region: event.target.region.value,
-            how_many: event.target.howmany.value,
-            deliver_to: event.target.deliverto.value,
-        };
-        console.log(alertData);
-        axios.post("http://localhost:8080/alerts", alertData).then(() => {
-            navigate("/success");
-        });
-    };
+    
     return (
-        <form onSubmit={onSubmit} className="filter-item-overall-container">
+        <form className="filter-item-overall-container">
             <div className="search-bar">
                 <h2>Monitor keywords and specific terms you set</h2>
                 <div className="search-bar-overall-container">
@@ -78,18 +74,6 @@ function FilterBar() {
                             ))}
                     </div>
                 </div>
-            </div>
-            
-            <button className="filter-item-button">Create an Alert</button>
-
-            <div className="Alerts-Data">
-                <h2 className="Alerts-Data__title">
-                    Alerts Preview ({articleData.length})
-                </h2>
-
-                {articleData.map((data) => {
-                    return <AlertsArticle data={data} />;
-                })}
             </div>
         </form>
     );
