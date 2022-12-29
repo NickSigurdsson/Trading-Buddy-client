@@ -4,7 +4,7 @@ function PortfolioItem({ticker,price}){
         <ul className="portfolio-item">
             <li className="portfolio-item__data">{ticker}</li>
             <li className="portfolio-item__data">{price}</li>
-            <li className="portfolio-item__data-price">5.1%</li>
+            <li className="portfolio-item__data-price">2.25%</li>
         </ul>
     )
 }

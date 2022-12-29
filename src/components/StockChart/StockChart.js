@@ -9,7 +9,7 @@ function StockChart() {
   const [yValue, setYValue] = useState([]);
 
   const API_KEY='3NSM9679F4Z9LTNT';
-  const TICKER='TSLA';
+  const TICKER='MMAT';
 
   useEffect(()=>{
     axios.get(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${TICKER}&outputsize=compact&apikey=${API_KEY}`)
