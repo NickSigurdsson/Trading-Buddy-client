@@ -1,18 +1,46 @@
 import './FilterBarr.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 function FilterBarr(){
-    // Sets up initial 
-    const [value,setValue] = useState('')
-    // This line constantly updates the value of "value" and we can set it so that with EVERY change we will do an http request (axios call) --> do in front end then transfer to the backend
+    // This will set the initial suggestion to have blank values
+    const initList = [{"1. symbol":""}, {"1. symbol":""}];
+    const [value,setValue] = useState('');
+    const [list,setList] = useState([]);
     const updateValue = (event)=>{
         setValue(event.target.value);
+        console.log(value);
     }
+    useEffect(()=>{
+        if (value === ''){
+            setList(initList);
+        }
+        else{
+            axios.get(`https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${value}&apikey=3NSM9679F4Z9LTNT`)
+            .then(response=>{
+                const data = response.data["bestMatches"];
+                setList(data);       
+            })
+            .catch(error=>{
+                console.log(error);
+            })   
+        }
+    },[value])
+
+    const onSearch = (searchTerm) => {
+        console.log('search', searchTerm);
+    }
+
     return(
         <>
-            <h2 className='search-bar-container__heading'>Enter  </h2>
-            <form className='search-bar-container' action="">
+            <form className='search-bar-container'>
                 <input className='search-bar-container__input' type="text" placeholder='Enter Ticker Here' value={value} onChange={updateValue} />
+                <button type='button' className='search-bar-container__button' onClick={()=>onSearch(value)}>Search</button>
             </form>
+            <div className='search-bar-suggestions'>
+                {list.map((item)=> (<div className='search-bar-suggestions-item'>
+                    {item["1. symbol"]}    
+                </div>))}
+            </div>
         </>
     )
 }
