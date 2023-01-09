@@ -45,7 +45,7 @@ function FilterBarr({tickerUpdate}){
                                     onClick = {()=>{setValue(item["1. symbol"])}}
                                     key = {item["1. symbol"]}
                                 >
-                                        {item["1. symbol"]}    
+                                    {item["1. symbol"]}    
                                 </div>)
                             )
                         }
