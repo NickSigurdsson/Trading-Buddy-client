@@ -33,14 +33,18 @@ function FilterBarr(){
     return(
         <>
             <form className='search-bar-container'>
-                <input className='search-bar-container__input' type="text" placeholder='Enter Ticker Here' value={value} onChange={updateValue} />
+                <div>
+                    <input className='search-bar-container__input' type="text" placeholder='Enter Ticker Here' value={value} onChange={updateValue} />
+                    <div className='search-bar-suggestions'>
+                        {list.map((item)=> (<div className='search-bar-suggestions-item'>
+                            {item["1. symbol"]}    
+                    </div>))}
+            </div>
+                </div>
+                
                 <button type='button' className='search-bar-container__button' onClick={()=>onSearch(value)}>Search</button>
             </form>
-            <div className='search-bar-suggestions'>
-                {list.map((item)=> (<div className='search-bar-suggestions-item'>
-                    {item["1. symbol"]}    
-                </div>))}
-            </div>
+            
         </>
     )
 }
