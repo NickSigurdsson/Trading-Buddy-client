@@ -2,11 +2,12 @@ import Watchlist from '../../components/Watchlist/Watchlist';
 import Portfolio from '../../components/Portfolio/Portfolio';
 import StockChart from '../../components/StockChart/StockChart';
 import NewsList from '../../components/NewsList/NewsList';
-// import FilterBarFixed from '../../components/FilterBar/FilterBarFixed';
 import FilterBarr from '../../components/FilterBar/FilterBarr';
 import './Dashboard.scss';
+import { useState } from 'react';
 function Dashboard(){
     const dashboardNewsList = 'dashboard/news';
+    const [tickerChanger, useTickerChanger] = useState('AAPL')
     return(
         <>
             <div className='dashboard-overall'>
@@ -14,14 +15,16 @@ function Dashboard(){
                     <Watchlist/>
                     <Portfolio/>
                 </section>
-                <FilterBarr/>
+                <FilterBarr
+                    tickerUpdate = {useTickerChanger}
+                />
                 <div className='dashboard-chart-position'>
-                    <StockChart/>
+                    <StockChart
+                    ticker = {tickerChanger}
+                    />
                 </div>
             </div>
             <NewsList urlModifier={dashboardNewsList}/>
-            {/* <FilterBarFixed/> */}
-
         </>
         
     )

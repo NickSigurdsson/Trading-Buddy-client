@@ -4,15 +4,14 @@ import Plot from 'react-plotly.js';
 import axios from 'axios';
 import './StockChart.scss';
 // basically stock charts is a type of react component (making it a part of)
-function StockChart() {
+function StockChart({ticker}) {
   const [xValue, setXValue] = useState([]);
   const [yValue, setYValue] = useState([]);
 
   const API_KEY='3NSM9679F4Z9LTNT';
-  const TICKER='MMAT';
 
   useEffect(()=>{
-    axios.get(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${TICKER}&outputsize=compact&apikey=${API_KEY}`)
+    axios.get(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${ticker}&outputsize=compact&apikey=${API_KEY}`)
     .then(response => {
         // do some sort of data storing for both the x and y value using the states you've declared above.
         const data = response.data;
@@ -31,7 +30,7 @@ function StockChart() {
     .catch(error => {
         console.log(error);
     })
-    },[])
+    },[ticker])
 
     return (
       <div className='chart-container'>
@@ -45,7 +44,7 @@ function StockChart() {
               marker: {color: '7FC37E'},
             }
           ]}
-          layout={{width: 720, height: 440, title: TICKER}}
+          layout={{width: 720, height: 440, title: ticker}}
           config = {{responsive:true}}
         />
       </div>

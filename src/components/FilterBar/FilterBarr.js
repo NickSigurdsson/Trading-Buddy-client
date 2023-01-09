@@ -1,7 +1,7 @@
 import './FilterBarr.scss';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-function FilterBarr(){
+function FilterBarr({tickerUpdate}){
     // This will set the initial suggestion to have blank values
     const initList = [{"1. symbol":""}, {"1. symbol":""}];
     const [value,setValue] = useState('');
@@ -26,9 +26,10 @@ function FilterBarr(){
         }
     },[value])
 
-    const onSearch = (searchTerm) => {
-        console.log('search', searchTerm);
-    }
+    // const onSearch = (searchTerm) => {
+    //     // console.log('search', searchTerm);
+    //     tickerUpdate(searchTerm);
+    // }
 
     return(
         <>
@@ -36,13 +37,21 @@ function FilterBarr(){
                 <div>
                     <input className='search-bar-container__input' type="text" placeholder='Enter Ticker Here' value={value} onChange={updateValue} />
                     <div className='search-bar-suggestions'>
-                        {list.map((item)=> (<div className='search-bar-suggestions-item'>
-                            {item["1. symbol"]}    
-                    </div>))}
-            </div>
+                        {list
+                            .slice(0, 10)
+                            .map((item)=> (
+                                <div 
+                                    className='search-bar-suggestions-item'
+                                    onClick = {()=>{setValue(item["1. symbol"])}}
+                                    key = {item["1. symbol"]}
+                                >
+                                        {item["1. symbol"]}    
+                                </div>)
+                            )
+                        }
+                    </div>
                 </div>
-                
-                <button type='button' className='search-bar-container__button' onClick={()=>onSearch(value)}>Search</button>
+                <button type='button' className='search-bar-container__button' onClick={()=> tickerUpdate(value)}>Search</button>
             </form>
             
         </>
