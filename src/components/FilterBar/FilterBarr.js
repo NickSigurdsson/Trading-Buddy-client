@@ -8,7 +8,6 @@ function FilterBarr({tickerUpdate}){
     const [list,setList] = useState([]);
     const updateValue = (event)=>{
         setValue(event.target.value);
-        console.log(value);
     }
     useEffect(()=>{
         if (value === ''){

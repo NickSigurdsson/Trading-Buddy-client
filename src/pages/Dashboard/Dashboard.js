@@ -24,9 +24,8 @@ function Dashboard(){
                     />
                 </div>
             </div>
-            <NewsList urlModifier={dashboardNewsList}/>
+            <NewsList urlModifier={`${dashboardNewsList}?ticker=${tickerChanger}`} />
         </>
-        
     )
 }
 export default Dashboard

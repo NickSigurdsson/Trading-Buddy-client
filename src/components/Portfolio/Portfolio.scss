@@ -20,11 +20,14 @@
             @include setMargin(0,0,0,0);
         }
         &__button{
-            background-color: $off-black;
+            background-color: $button-black;
             border-style:none;
             border-radius: 20px;
             color:$white;
-            @include setPadding(0,0.5rem,0,0.5rem);
+            @include setPadding(0,1rem,0,1rem);
+            &:hover{
+                background-color: black;
+            } 
         }
     }
     &-column-titles{
