@@ -23,8 +23,9 @@ function Watchlist(){
         <section className="watchlist">
             <div className="watchlist-header">
                 <h1 className='watchlist-header__heading'>Watchlist</h1>
-                <button className="watchlist-header__button"> + Add Ticker </button>
-                {/* <button className="watchlist-header__button" onClick={() => setShowModal(true)}> + Add Ticker </button> */}
+                <button className="watchlist-header__button" onClick={()=>{console.log('buttonworks')}}> 
+                    + Add to Watchlist 
+                </button>
             </div>
             <ul className="watchlist-column-titles">
                 <li className="watchlist-column-titles__header">Ticker</li>

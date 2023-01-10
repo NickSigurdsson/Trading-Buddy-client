@@ -26,11 +26,6 @@ function FilterBarr({tickerUpdate}){
         }
     },[value])
 
-    // const onSearch = (searchTerm) => {
-    //     // console.log('search', searchTerm);
-    //     tickerUpdate(searchTerm);
-    // }
-
     return(
         <>
             <form className='search-bar-container'>
