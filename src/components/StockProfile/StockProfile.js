@@ -8,16 +8,16 @@ function StockProfile({ticker}){
     useEffect(()=>{
         axios.get(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=${ticker}&apikey=3NSM9679F4Z9LTNT`)
         .then(response=>{
-            setStockProfile( response.data["Description"]);
+            setStockProfile(response.data);
         })
         .catch(error => {
-            console.log(error);
+            console.log("Unable to obtain stock profile!");
         })
     },[ticker])
     return(
-        <div className='dashboard-stock-summary'>
-            <h1 className='dashboard-stock-summary__header'>Company Profile</h1>
-            <p>{stockProfile}</p>
+        <div className='dashboard-stock-profile'>
+            <h1 className='dashboard-stock-profile__header'>Company Profile</h1>
+            <p className='dashboard-stock-profile__paragraph'>{stockProfile["Description"]}</p>
         </div>
     )
 }

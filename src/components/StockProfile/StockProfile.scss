@@ -1,6 +1,6 @@
 @use '../../styles//partials/mixins.scss' as *;
 @use '../../styles/partials/colors' as *;
-.dashboard-stock-summary{
+.dashboard-stock-profile{
     background-color: $off-black;
     color: $off-white;
     border-radius: 5px;
@@ -8,26 +8,14 @@
     @include setPadding(1rem,1rem,1rem,1rem);
     @include setMargin(1rem,0,0rem,0);
     @include tablet{
-        width: 45%;
+        width: 50%;
+        @include setMargin(1rem,0,0,1rem);
     }
     &__header{
         @include setMargin(0,0,1rem,0);
         font-size: 1.5rem;
     }
-}
-.dashboard-stock-data{
-    &__item{
-        display: flex;
-        justify-content: space-between;
-        @include setPadding(0.5rem,0,0.5rem,0);
-        border-bottom: grey 1px solid;
-        &-category{
-            @include setMargin(0,0,0,0);
-        }
-        &-category-data{
-            @include setMargin(0,0,0,0);
-            color: $white;
-        }
-
+    &__paragraph{
+        line-height: 1.5rem;
     }
 }

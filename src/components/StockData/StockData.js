@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 function StockData({ticker}){
-    const [stockData, setStockData] = useState([{
+    const [stockData, setStockData] = useState({
         "01. symbol": "AAPL",
         "02. open": "130.2600",
         "03. high": "131.2636",
@@ -13,7 +13,7 @@ function StockData({ticker}){
         "07. latest trading day": "2023-01-10",
         "08. previous close": "130.1500",
         "09. change": "0.5800",
-        "10. change percent": "0.4456%"}])
+        "10. change percent": "0.4456%"})
 
     useEffect(()=>{
         axios.get(`https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${ticker}&apikey=3NSM9679F4Z9LTNT`)

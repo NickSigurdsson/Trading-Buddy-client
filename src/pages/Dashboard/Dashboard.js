@@ -7,6 +7,7 @@ import './Dashboard.scss';
 import { useState } from 'react';
 import StockData from '../../components/StockData/StockData';
 import StockProfile from '../../components/StockProfile/StockProfile';
+import StockStats from '../../components/StockStats/StockStats';
 function Dashboard(){
     const dashboardNewsList = 'dashboard/news';
     const [tickerChanger, useTickerChanger] = useState('AAPL')
@@ -26,7 +27,12 @@ function Dashboard(){
                     />
                 </div>
                 <div className='dashboard-stock-summary-position'>
-                    <StockData ticker = {tickerChanger}/>
+                    <div className='dashboard-stock-summary-position__container'>
+                        <StockData ticker = {tickerChanger}/>
+                        <StockStats ticker = {tickerChanger}/>
+                    </div>
+                    {/* <StockData ticker = {tickerChanger}/>
+                    <StockStats ticker = {tickerChanger}/> */}
                     <StockProfile ticker={tickerChanger}/>
                 </div>
             </div>
