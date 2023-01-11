@@ -27,7 +27,7 @@ function StockData({ticker}){
     
     return(
         <div className='dashboard-stock-summary'>
-            <h1 className='dashboard-stock-summary__header'>Summary</h1>
+            <h1 className='dashboard-stock-summary__header'>Intraday Quote</h1>
             <section className='dashboard-stock-data'>
                 <div className="dashboard-stock-data__item">
                     <p className='dashboard-stock-data__item-category'>Open</p>
