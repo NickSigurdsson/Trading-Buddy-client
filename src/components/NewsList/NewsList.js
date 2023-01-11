@@ -9,7 +9,6 @@ function NewsList({urlModifier}){
         axios.get(`http://localhost:8080/${urlModifier}`)
         .then(response=>{
             setNewsData(response.data);
-            console.log(response.data);
         })
         .catch(error=>{
             console.log(error);

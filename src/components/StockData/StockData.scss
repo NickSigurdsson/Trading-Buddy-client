@@ -1,0 +1,34 @@
+@use '../../styles//partials/mixins.scss' as *;
+@use '../../styles/partials/colors' as *;
+.dashboard-stock-summary{
+    background-color: $off-black;
+    color: $off-white;
+    border-radius: 5px;
+    width: 35%;
+    @include setPadding(1rem,1rem,1rem,1rem);
+    @include setMargin(1rem,0,0rem,0);
+    &-position{
+        display: flex;
+        justify-content: center;
+        // @include setMargin(1rem,1rem,1rem,1rem);
+    }
+    &__header{
+        @include setMargin(0,0,1rem,0);
+    }
+}
+.dashboard-stock-data{
+    &__item{
+        display: flex;
+        justify-content: space-between;
+        @include setPadding(0.5rem,0,0.5rem,0);
+        border-bottom: grey 1px solid;
+        &-category{
+            @include setMargin(0,0,0,0);
+        }
+        &-category-data{
+            @include setMargin(0,0,0,0);
+            color: $white;
+        }
+
+    }
+}

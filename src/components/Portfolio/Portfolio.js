@@ -2,10 +2,9 @@ import './Portfolio.scss';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import PortfolioItem from '../PortfolioItem/PortfolioItem'
+
 function Portfolio(){
-
     const [portfolioData, setPortfolioData] = useState([]);
-
     useEffect(()=>{
         axios.get('http://localhost:8080/dashboard/portfolio')
         .then(response=>{

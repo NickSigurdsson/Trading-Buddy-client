@@ -25,7 +25,6 @@ function StockChart({ticker}) {
         }
         setXValue(XValueArray);
         setYValue(YValueArray);
-        console.log(data);
     })
     .catch(error => {
         console.log(error);

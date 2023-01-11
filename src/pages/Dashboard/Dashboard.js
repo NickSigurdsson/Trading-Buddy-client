@@ -5,6 +5,7 @@ import NewsList from '../../components/NewsList/NewsList';
 import FilterBarr from '../../components/FilterBar/FilterBarr';
 import './Dashboard.scss';
 import { useState } from 'react';
+import StockData from '../../components/StockData/StockData';
 function Dashboard(){
     const dashboardNewsList = 'dashboard/news';
     const [tickerChanger, useTickerChanger] = useState('AAPL')
@@ -22,6 +23,9 @@ function Dashboard(){
                     <StockChart
                     ticker = {tickerChanger}
                     />
+                </div>
+                <div className='dashboard-stock-summary-position'>
+                    <StockData ticker = {tickerChanger}/>
                 </div>
             </div>
             <NewsList urlModifier={`${dashboardNewsList}?ticker=${tickerChanger}`} />
