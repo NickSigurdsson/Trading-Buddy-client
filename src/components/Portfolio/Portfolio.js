@@ -19,11 +19,12 @@ function Portfolio(){
         <section className="portfolio">
             <div className="portfolio-header">
                 <h1 className='portfolio-header__heading'>Portfolio</h1>
-                <button className="portfolio-header__button"> + Add Ticker </button>
+                <button className="portfolio-header__button" onClick={()=>console.log('addto portfolio')}> + Add Ticker </button>
             </div>
             <ul className="portfolio-column-titles">
                 <li className="portfolio-column-titles__header">Ticker</li>
                 <li className="portfolio-column-titles__header">Price</li>
+                <li className="portfolio-column-titles__header">Avg. Price</li>
                 <li className="portfolio-column-titles__header">% Change</li>
             </ul>
             {portfolioData.map((article)=>{

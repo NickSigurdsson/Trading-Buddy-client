@@ -6,7 +6,6 @@ import axios from 'axios';
 function Watchlist(){
     // set the modal to false won't show until the button is pressed
     // const [showModal, setShowModal] = useState(false);
-
     const [watchlistData, setWatchlistData] = useState([])
 
     useEffect(()=>{
@@ -43,7 +42,6 @@ function Watchlist(){
                     />
                 )
             })}
-
             {/* <AddWatchlist showModal={showModal}/> */}
         </section>
     )

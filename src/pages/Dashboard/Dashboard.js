@@ -31,8 +31,6 @@ function Dashboard(){
                         <StockData ticker = {tickerChanger}/>
                         <StockStats ticker = {tickerChanger}/>
                     </div>
-                    {/* <StockData ticker = {tickerChanger}/>
-                    <StockStats ticker = {tickerChanger}/> */}
                     <StockProfile ticker={tickerChanger}/>
                 </div>
             </div>

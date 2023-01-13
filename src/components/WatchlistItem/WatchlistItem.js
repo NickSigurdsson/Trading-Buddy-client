@@ -15,11 +15,13 @@ function WatchlistItem({ticker,price}){
     },[ticker])
 
     return(
-        <ul className="watchlist-item">
-            <li className="watchlist-item__data">{ticker}</li>
-            <li className="watchlist-item__data">{price}</li>
-            <li className="watchlist-item__data-price">{priceQuote}</li>
-        </ul>
+        <>
+            <ul className="watchlist-item">
+                <li className="watchlist-item__data">{ticker}</li>
+                <li className="watchlist-item__data">{price}</li>
+                <li className="watchlist-item__data-price">{priceQuote}</li>
+            </ul>
+        </>
     )
 }
 export default WatchlistItem;
